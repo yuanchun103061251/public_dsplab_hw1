@@ -7,7 +7,7 @@
 # Project 1: Image Filtering and Hybrid Images
 
 ## Brief
-* Due: TBA
+* Due: 10/9 at 8am
 * Required files: results/index.md, and code/
 
 ##Overview
@@ -65,7 +65,7 @@ For this project, and all other projects, you must do a project report in result
 * +50 pts: Working implementation of image filtering in my_imfilter.m
 * +30 pts: Working hybrid image generation
 * +20 pts: Writeup with several examples of hybrid images
-* +10 pts: Extra credit (up to ten points)
+* +5 pts: Extra credit (up to ten points)
 * -5*n pts: Lose 5 points for every time (after the first) you do not follow the instructions for the hand in format
 
 ## Get start & hand in
