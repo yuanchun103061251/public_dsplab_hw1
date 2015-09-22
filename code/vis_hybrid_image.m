@@ -15,7 +15,7 @@ for i = 2:scales
     %add padding
     output = cat(2, output, ones(original_height, padding, num_colors));
     
-    %dowsample image;
+    %downsample image;
     cur_image = imresize(cur_image, scale_factor, 'bilinear');
     %pad the top and append to the output
     tmp = cat(1,ones(original_height - size(cur_image,1), size(cur_image,2), num_colors), cur_image);
