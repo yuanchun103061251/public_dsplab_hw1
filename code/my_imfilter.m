@@ -28,25 +28,7 @@ function output = my_imfilter(image, filter)
 %%%%%%%%%%%%%%%%
 % Your code here
 %%%%%%%%%%%%%%%%
-%decide size
-f_size=size(filter);
-img_size=size(image);
-pad_w=(f_size(1)-mod(f_size(1),2))/2;
-pad_l=(f_size(2)-mod(f_size(2),2))/2;
 
-%zero padding
-output=zeros(img_size(1),img_size(2),img_size(3));
-exp_img=zeros(img_size(1)+pad_w*2,img_size(2)+pad_l*2,img_size(3));
-exp_img((pad_w+1):(pad_w+img_size(1)),(pad_l+1):(pad_l+img_size(2)),:)=image;
-
-%convolution
-for i=(pad_w+1):(pad_w+img_size(1))
-    for j=(pad_l+1):(pad_l+img_size(2))
-        R = sum(sum(exp_img((i-pad_w):(i+pad_w),(j-pad_l):(j+pad_l),1).*filter));
-        G = sum(sum(exp_img((i-pad_w):(i+pad_w),(j-pad_l):(j+pad_l),2).*filter));
-        B = sum(sum(exp_img((i-pad_w):(i+pad_w),(j-pad_l):(j+pad_l),3).*filter));
-        output(i-pad_w,j-pad_l,1)=R;
-        output(i-pad_w,j-pad_l,2)=G;
-        output(i-pad_w,j-pad_l,3)=B;
-    end
-end
+%%%%%%%%%%%%%%%%
+% Your code end
+%%%%%%%%%%%%%%%%
