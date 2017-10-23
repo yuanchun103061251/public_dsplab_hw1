@@ -24,11 +24,37 @@ function output = my_imfilter(image, filter)
 % % filter2, conv2, etc. Simply loop over all the pixels and do the actual
 % % computation. It might be slow.
 % output = imfilter(image, filter);
-
+R = image(:,:,1);
+G = image(:,:,2);
+B = image(:,:,3);
 %%%%%%%%%%%%%%%%
 % Your code here
 %%%%%%%%%%%%%%%%
-
+[i_height,i_width,channel] = size(image);
+[f_height,f_width,channel2] = size(filter);
+big_R = zeros(i_width+f_width-1,i_height+f_height-1);
+big_G = zeros(i_width+f_width-1,i_height+f_height-1);
+big_B = zeros(i_width+f_width-1,i_height+f_height-1);
+big_R((f_width+1)/2:i_width+((f_width-1)/2),(f_height+1)/2:i_height+((f_height-1)/2)) = R';
+big_G((f_width+1)/2:i_width+((f_width-1)/2),(f_height+1)/2:i_height+((f_height-1)/2)) = G';
+big_B((f_width+1)/2:i_width+((f_width-1)/2),(f_height+1)/2:i_height+((f_height-1)/2)) = B';
+big_R = big_R';
+big_G = big_G';
+big_B = big_B';
+%convolution
+for j = 1:i_height
+    for i = 1:i_width
+        new_R(j,i) = sum(sum(filter.*big_R(j:j+f_height-1,i:i+f_width-1)));
+        new_G(j,i) = sum(sum(filter.*big_G(j:j+f_height-1,i:i+f_width-1)));
+        new_B(j,i) = sum(sum(filter.*big_B(j:j+f_height-1,i:i+f_width-1)));
+    end
+end
 %%%%%%%%%%%%%%%%
 % Your code end
 %%%%%%%%%%%%%%%%
+output(:,:,1) = new_R;
+output(:,:,2) = new_G;
+output(:,:,3) = new_B;
+figure
+imshow(output)
+end

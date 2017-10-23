@@ -7,7 +7,7 @@
 % useful when projects get more complex and slow to rerun from scratch
 
 close all; % closes all figures
-
+clear all;
 %% Setup
 % read images and convert to floating point format
 image1 = im2single(imread('../data/dog.bmp'));
@@ -37,7 +37,7 @@ filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 % blur that works best will vary with different image pairs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%low_frequencies=
+low_frequencies=my_imfilter(image1, filter);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Remove the low frequencies from image2. The easiest way to do this is to
@@ -45,20 +45,21 @@ filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 % This will give you an image centered at zero with negative values.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%high_frequencies=
-
+high_frequencies=my_imfilter(image2, filter);
+%high_frequencies=high_frequencies*max(max(max(low_frequencies)))/max(max(max(high_frequencies)));
+high_frequencies = image2 - high_frequencies;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Combine the high frequencies and low frequencies
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%hybrid_image=
+hybrid_image=low_frequencies+high_frequencies;
 
 %% Visualize and save outputs
 figure(1); imshow(low_frequencies);
-figure(2); imshow(high_frequencies + 0.5);
+figure(2); imshow(high_frequencies+0.5);
 vis = vis_hybrid_image(hybrid_image);
 figure(3); imshow(vis);
 imwrite(low_frequencies, 'low_frequencies.jpg', 'quality', 95);
-imwrite(high_frequencies + 0.5, 'high_frequencies.jpg', 'quality', 95);
+imwrite(high_frequencies+0.5, 'high_frequencies.jpg', 'quality', 95);
 imwrite(hybrid_image, 'hybrid_image.jpg', 'quality', 95);
 imwrite(vis, 'hybrid_image_scales.jpg', 'quality', 95);
