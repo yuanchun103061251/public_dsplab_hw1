@@ -1,4 +1,4 @@
-# Your Name <span style="color:red">(yout cs id)</span>
+# Your Name <span style="color:red">(羅元均 103061251)</span>
 
 # Project 1 / Image Filtering and Hybrid Images
 
@@ -55,10 +55,17 @@ The project is related to
 			end
 		end
 		```
-	5. combine RGB
+	5. combine RGB as output
 		```
 		output(:,:,1) = new_R;
 		```
+3. discussion
+	1. if we change the cutoff frequency of the low_pass and high_pass filter, becoming 5 and 9 respectively, how much            will change?
+		
+		it changes little, as shown in the first set and second set of images in Results.
+	2. if we swap the image1 and image2 and build the hybrid image, what will happen?
+		
+		the outcome will be in constrast with the original one. it seems to be a dog when viewed from nearby, but 		  it looks like cat when viewed from faraway. 
 
 ## Results
 from left to right   <br />
@@ -90,6 +97,22 @@ dog_origin,    dog_low_frequency,    cat_origin,    cat_high_frequency
 </table>
 vis_hybrid
 <img src="/0509hybrid_image_scales.jpg" width="33%"/>    <br />
+
+from left to right   <br />
+cat_origin,    cat_low_frequency,   dog_origin,    dog_high_frequency, 
+<table border=1>
+<tr>
+<td>
+<img src="/data/cat.bmp" width="24%"/>
+<img src="/cat_low_frequencies.jpg" width="24%"/>
+<img src="/data/dog.bmp"  width="24%"/>
+<img src="/dog_high_frequencies.jpg" width="24%"/>
+</td>
+</tr>
+</table>
+vis_hybrid
+<img src="/cat_dog_hybrid_image_scales.jpg" width="33%"/>    <br />
+
 
 from left to right   <br />
 fish_origin,    fish_low_frequency, submarine_origin,    submarine_high_frequency, 
