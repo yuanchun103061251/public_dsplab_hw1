@@ -76,6 +76,21 @@ dog_origin,    dog_low_frequency,    cat_origin,    cat_high_frequency
 vis_hybrid
 <img src="/hybrid_image_scales.jpg" width="33%"/>    <br />
 
+from left to right low_cutoff=5, high_cutoff=9  <br />
+dog_origin,    dog_low_frequency,    cat_origin,    cat_high_frequency
+<table border=1>
+<tr>
+<td>
+<img src="/data/dog.bmp" width="24%"/>
+<img src="/5low_frequencies.jpg" width="24%"/>
+<img src="/data/cat.bmp"  width="24%"/>
+<img src="/9high_frequencies.jpg" width="24%"/>
+</td>
+</tr>
+</table>
+vis_hybrid
+<img src="/0509hybrid_image_scales.jpg" width="33%"/>    <br />
+
 from left to right   <br />
 cat_origin,    cat_low_frequency, dog_origin,    dog_high_frequency, 
 <table border=1>
