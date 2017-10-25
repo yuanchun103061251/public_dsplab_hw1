@@ -92,7 +92,7 @@ vis_hybrid
 <img src="/0509hybrid_image_scales.jpg" width="33%"/>    <br />
 
 from left to right   <br />
-cat_origin,    cat_low_frequency, dog_origin,    dog_high_frequency, 
+fish_origin,    fish_low_frequency, submarine_origin,    submarine_high_frequency, 
 <table border=1>
 <tr>
 <td>
@@ -105,3 +105,33 @@ cat_origin,    cat_low_frequency, dog_origin,    dog_high_frequency,
 </table>
 vis_hybrid
 <img src="/fish_submarine_image_scales.jpg" width="33%"/>    <br />
+
+from left to right   <br />
+einstein_origin,    einstein_low_frequency, marilyn_origin,    marilyn_high_frequency, 
+<table border=1>
+<tr>
+<td>
+<img src="/data/einstein.bmp" width="24%"/>
+<img src="/einstein_low_frequencies.jpg" width="24%"/>
+<img src="/data/marilyn.bmp"  width="24%"/>
+<img src="/marilyn_high_frequencies.jpg" width="24%"/>
+</td>
+</tr>
+</table>
+vis_hybrid
+<img src="/einstein_marilyn_hybrid_image_scales.jpg" width="33%"/>    <br />
+
+from left to right   <br />
+bicycle_origin,    bicycle_low_frequency, motorcycle_origin,    motorcycle_high_frequency, 
+<table border=1>
+<tr>
+<td>
+<img src="/data/bicycle.bmp" width="24%"/>
+<img src="/bicycle_low_frequencies.jpg" width="24%"/>
+<img src="/data/motorcycle.bmp"  width="24%"/>
+<img src="/motorcycle_high_frequencies.jpg" width="24%"/>
+</td>
+</tr>
+</table>
+vis_hybrid
+<img src="/bicycle_motorcycle_hybrid_image_scales.jpg" width="33%"/>    <br />
